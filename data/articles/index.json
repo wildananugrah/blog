@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "slug": "7-kebiasaan-manusia-efektif",
+      "filename": "7-kebiasaan-manusia-efektif.md",
+      "title": "Menuju Kesuksesan Sejati: Membedah 7 Kebiasaan Manusia yang Sangat Efektif",
+      "excerpt": "Ringkasan komprehensif dari buku legendaris Stephen R. Covey yang telah mengubah jutaan kehidupan. Pelajari 7 kebiasaan untuk mencapai efektivitas pribadi dan profesional.",
+      "tags": ["self-development", "productivity", "leadership", "book-summary"],
+      "createdAt": "2026-01-10T00:00:00Z"
+    },
+    {
+      "slug": "getting-started",
+      "filename": "getting-started.md",
+      "title": "Getting Started with the Blog",
+      "excerpt": "A sample article demonstrating markdown rendering capabilities including code blocks, tables, and more.",
+      "tags": ["tutorial", "markdown"],
+      "createdAt": "2026-01-10T00:00:00Z"
+    }
+  ]
+}
