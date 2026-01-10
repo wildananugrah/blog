@@ -88,7 +88,7 @@ Untuk tim yang otonom, kejelasan peran sangat penting. Model ini membagi tanggun
 
 **Little's Law** adalah formula fundamental dari teori antrian yang menjelaskan hubungan antara item dalam proses, waktu penyelesaian, dan output.
 
-```
+```bash
 WIP = Throughput x Cycle Time
 ```
 
