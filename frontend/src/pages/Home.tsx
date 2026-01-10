@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { getArticles } from '../api/client'
 import ArticleList from '../components/ArticleList'
+import { SEO, WebsiteJsonLd } from '../components/SEO'
 import type { PaginatedArticles } from '../types'
 
 export default function Home() {
@@ -76,8 +77,28 @@ export default function Home() {
   const totalPages = data?.totalPages || 1
   const total = data?.total || 0
 
+  const pageTitle = search
+    ? `Search: ${search}`
+    : selectedTag
+      ? `Articles tagged "${selectedTag}"`
+      : undefined
+
+  const pageDescription = search
+    ? `Search results for "${search}" - Find articles matching your query.`
+    : selectedTag
+      ? `Browse all articles tagged with "${selectedTag}". Discover insights on ${selectedTag}.`
+      : 'Discover insightful articles on self-development, productivity, leadership, and technology. Learn from comprehensive guides and book summaries.'
+
   return (
     <div>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        keywords={allTags}
+        url={`/${search ? `?search=${encodeURIComponent(search)}` : ''}${selectedTag ? `?tag=${encodeURIComponent(selectedTag)}` : ''}`}
+      />
+      <WebsiteJsonLd />
+
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Articles</h1>
 
       {/* Search */}

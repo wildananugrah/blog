@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getArticle } from '../api/client'
 import ArticleView from '../components/ArticleView'
+import { SEO, ArticleJsonLd, BreadcrumbJsonLd } from '../components/SEO'
 import type { Article } from '../types'
 
 export default function ArticlePage() {
@@ -40,6 +41,32 @@ export default function ArticlePage() {
 
   return (
     <article>
+      <SEO
+        title={article.title}
+        description={article.excerpt}
+        keywords={article.tags}
+        image={article.coverImage}
+        url={`/article/${article.slug}`}
+        type="article"
+        publishedTime={article.createdAt}
+        modifiedTime={article.updatedAt}
+      />
+      <ArticleJsonLd
+        title={article.title}
+        description={article.excerpt}
+        url={`/article/${article.slug}`}
+        image={article.coverImage}
+        publishedTime={article.createdAt}
+        modifiedTime={article.updatedAt}
+        tags={article.tags}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: article.title, url: `/article/${article.slug}` },
+        ]}
+      />
+
       <Link
         to="/"
         className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 mb-6"

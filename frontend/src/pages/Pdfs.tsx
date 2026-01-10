@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { getPdfs } from '../api/client'
 import PdfList from '../components/PdfList'
+import { SEO } from '../components/SEO'
 import type { PaginatedPdfs } from '../types'
 
 export default function Pdfs() {
@@ -76,8 +77,27 @@ export default function Pdfs() {
   const totalPages = data?.totalPages || 1
   const total = data?.total || 0
 
+  const pageTitle = search
+    ? `Search PDFs: ${search}`
+    : selectedTag
+      ? `PDFs tagged "${selectedTag}"`
+      : 'PDF Library'
+
+  const pageDescription = search
+    ? `Search results for "${search}" in PDF library.`
+    : selectedTag
+      ? `Browse all PDFs tagged with "${selectedTag}".`
+      : 'Browse and download PDFs on various topics including self-development, productivity, and leadership.'
+
   return (
     <div>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        keywords={allTags}
+        url={`/pdfs${search ? `?search=${encodeURIComponent(search)}` : ''}${selectedTag ? `?tag=${encodeURIComponent(selectedTag)}` : ''}`}
+      />
+
       <h1 className="text-3xl font-bold text-gray-900 mb-6">PDFs</h1>
 
       {/* Search */}

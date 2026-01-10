@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "membangun-tim-juara",
+      "filename": "membangun-tim-juara.md",
+      "title": "Membangun Tim Juara: Panduan Lengkap untuk Tim Berkinerja Tinggi",
+      "excerpt": "Panduan komprehensif membangun tim berkinerja tinggi dengan kerangka kerja 4 lapisan: budaya kepercayaan, struktur & kepemilikan, proses & eksekusi, hingga pengukuran kinerja.",
+      "tags": ["teamwork", "leadership", "productivity", "management"],
+      "createdAt": "2026-01-10T00:00:00Z"
+    },
+    {
       "slug": "7-kebiasaan-manusia-efektif",
       "filename": "7-kebiasaan-manusia-efektif.md",
       "title": "Menuju Kesuksesan Sejati: Membedah 7 Kebiasaan Manusia yang Sangat Efektif",

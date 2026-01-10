@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { getInfographics, getInfographicUrl } from '../api/client'
+import { SEO } from '../components/SEO'
 import type { PaginatedInfographics, InfographicMetadata } from '../types'
 
 export default function Infographics() {
@@ -67,8 +68,27 @@ export default function Infographics() {
   const totalPages = data?.totalPages || 1
   const total = data?.total || 0
 
+  const pageTitle = search
+    ? `Search Infographics: ${search}`
+    : selectedTag
+      ? `Infographics tagged "${selectedTag}"`
+      : 'Infographics Gallery'
+
+  const pageDescription = search
+    ? `Search results for "${search}" in infographics gallery.`
+    : selectedTag
+      ? `Browse all infographics tagged with "${selectedTag}".`
+      : 'Explore visual infographics on self-development, productivity, leadership, and more.'
+
   return (
     <div>
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        keywords={allTags}
+        url={`/infographics${search ? `?search=${encodeURIComponent(search)}` : ''}${selectedTag ? `?tag=${encodeURIComponent(selectedTag)}` : ''}`}
+      />
+
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Infographics</h1>
 
       {/* Search */}
