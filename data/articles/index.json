@@ -1,6 +1,14 @@
 {
   "articles": [
     {
+      "slug": "ai-2041-sepuluh-visi-masa-depan",
+      "filename": "ai-2041-sepuluh-visi-masa-depan.md",
+      "title": "AI 2041: Sepuluh Visi Masa Depan Kita",
+      "excerpt": "Panduan memahami masa depan kecerdasan buatan berdasarkan buku karya Kai-Fu Lee & Chen Qiufan. Menggabungkan fiksi spekulatif dengan analisis teknis untuk 10 visi AI di tahun 2041.",
+      "tags": ["artificial-intelligence", "technology", "future", "book-summary"],
+      "createdAt": "2026-01-11T00:00:00Z"
+    },
+    {
       "slug": "membangun-tim-juara",
       "filename": "membangun-tim-juara.md",
       "title": "Membangun Tim Juara: Panduan Lengkap untuk Tim Berkinerja Tinggi",
