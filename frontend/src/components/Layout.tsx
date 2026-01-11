@@ -10,10 +10,13 @@ export default function Layout() {
     return location.pathname.startsWith(path)
   }
 
+  // Use wider layout for PDF and Infographic viewer pages
+  const isWideLayout = location.pathname.startsWith('/pdf/') || location.pathname.startsWith('/infographic/')
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <nav className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className={`${isWideLayout ? 'max-w-7xl' : 'max-w-5xl'} mx-auto px-4`}>
           <div className="flex justify-between h-16">
             <div className="flex items-center space-x-8">
               <Link to="/" className="text-xl font-bold text-gray-900">
@@ -75,12 +78,12 @@ export default function Layout() {
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-4 py-8 flex-1">
+      <main className={`${isWideLayout ? 'max-w-7xl' : 'max-w-5xl'} mx-auto px-4 py-8 flex-1 w-full`}>
         <Outlet />
       </main>
 
       <footer className="bg-white border-t border-gray-200 mt-auto">
-        <div className="max-w-5xl mx-auto px-4 py-6">
+        <div className={`${isWideLayout ? 'max-w-7xl' : 'max-w-5xl'} mx-auto px-4 py-6`}>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
               Built with React, Hono & Bun
